@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>English Learning Hub</title>
+
+<style>
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #123c69;
+    color: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 40px 20px;
+
+    background: linear-gradient(
+        120deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    transition: background 1s;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 21px;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    background: #ffd166;
+    color: #222;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 60px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 35px;
+    color: #123c69;
+}
+
+.section-title p {
+    color: #666;
+}
+
+/* =========================
+   LEARNING CARDS
+========================= */
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.learning-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.learning-card:hover {
+    transform: translateY(-8px);
+}
+
+.learning-card h3 {
+    color: #2563eb;
+    margin: 15px 0;
+}
+
+.learning-card button {
+    padding: 10px 20px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* =========================
+   CONTENT BOX
+========================= */
+
+.content-box {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+/* =========================
+   GRAMMAR
+========================= */
+
+.grammar-topic {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-left: 5px solid #2563eb;
+    background: #f4f8ff;
+}
+
+.grammar-topic h3 {
+    color: #123c69;
+    margin-bottom: 10px;
+}
+
+.example {
+    background: #e8f1ff;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+/* =========================
+   VOCABULARY
+========================= */
+
+.search-box {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.vocabulary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.word-card {
+    background: #f8fbff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.word-card h3 {
+    color: #2563eb;
+}
+
+.word-card button,
+.speak-button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    background: #123c69;
+    color: white;
+    cursor: pointer;
+}
+
+/* =========================
+   SPEAKING
+========================= */
+
+.speaking-list {
+    display: grid;
+    gap: 15px;
+}
+
+.speaking-item {
+    padding: 20px;
+    background: #eef4ff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* =========================
+   PROVERBS
+========================= */
+
+.proverb-box {
+    text-align: center;
+    padding: 30px;
+    background: #eef4ff;
+    border-radius: 15px;
+}
+
+.proverb-box h3 {
+    color: #2563eb;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.proverb-box p {
+    margin: 15px 0;
+}
+
+.proverb-number {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.proverb-buttons {
+    margin-top: 25px;
+}
+
+.proverb-buttons button {
+    padding: 10px 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    background: #2563eb;
+    color: white;
+}
+
+/* =========================
+   QUIZ
+========================= */
+
+.quiz-question {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8fbff;
+    border-radius: 10px;
+}
+
+.quiz-question h3 {
+    margin-bottom: 15px;
+}
+
+.option {
+    display: block;
+    padding: 10px;
+    margin: 7px 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #e8f1ff;
+}
+
+#quizResult {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 25px;
+}
+
+.quiz-button {
+    display: block;
+    margin: auto;
+    padding: 14px 30px;
+    border: none;
+    background: #123c69;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #123c69;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .speaking-item {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="logo">
+        English Learning Hub
+    </div>
+
+    <nav>
+
+        <a href="#home">Home</a>
+
+        <a href="#grammar">Grammar</a>
+
+        <a href="#vocabulary">Vocabulary</a>
+
+        <a href="#speaking">Speaking</a>
+
+        <a href="#proverbs">Proverbs</a>
+
+        <a href="#quiz">Quiz</a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>Learn English Easily</h1>
+
+        <p>
+            Improve your Grammar, Vocabulary, Speaking,
+            Proverbs and Test Your Knowledge.
+        </p>
+
+        <button onclick="startLearning()">
+            Start Learning
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     LEARNING AREAS
+========================= -->
+
+<section>
+
+    <div class="section-title">
+
+        <h2>What Do You Want to Learn?</h2>
+
+        <p>
+            Choose an area and start learning English.
+        </p>
+
+    </div>
+
+
+    <div class="learning-grid">
+
+
+        <div class="learning-card">
+
+            <div style="font-size:45px;">📖</div>
+
+            <h3>Grammar</h3>
+
+            <p>
+                Learn important English grammar rules.
+            </p>
+
+            <button onclick="goTo('grammar')">
+                Learn Grammar
+            </button>
+
+        </div>
+
+
+        <div class="learning-card">
+
+            <div style="font-size:45px;">📚</div>
+
+            <h3>Vocabulary</h3>
+
+            <p>
+                Learn new English words and meanings.
+            </p>
+
+            <button onclick="goTo('vocabulary')">
+                Learn Words
+            </button>
+
+        </div>
+
+
+        <div class="learning-card">
+
+            <div style="font-size:45px;">🎤</div>
+
+            <h3>Speaking</h3>
+
+            <p>
+                Practice English pronunciation.
+            </p>
+
+            <button onclick="goTo('speaking')">
+                Practice Speaking
+            </button>
+
+        </div>
+
+
+        <div class="learning-card">
+
+            <div style="font-size:45px;">💡</div>
+
+            <h3>Proverbs</h3>
+
+            <p>
+                Learn 100 useful English proverbs.
+            </p>
+
+            <button onclick="goTo('proverbs')">
+                Learn Proverbs
+            </button>
+
+        </div>
+
+
+        <div class="learning-card">
+
+            <div style="font-size:45px;">📝</div>
+
+            <h3>Quiz</h3>
+
+            <p>
+                Test your English knowledge.
+            </p>
+
+            <button onclick="goTo('quiz')">
+                Take Quiz
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GRAMMAR
+========================= -->
+
+<section id="grammar">
+
+    <div class="section-title">
+
+        <h2>📖 English Grammar</h2>
+
+        <p>
+            Learn important grammar topics.
+        </p>
+
+    </div>
+
+
+    <div class="content-box">
+
+
+        <div class="grammar-topic">
+
+            <h3>1. Simple Present Tense</h3>
+
+            <p>
+                We use the simple present to talk about
+                habits, routines and general facts.
+            </p>
+
+            <div class="example">
+
+                <strong>Examples:</strong>
+
+                <br>
+
+                I go to school every day.
+
+                <br>
+
+                She studies English.
+
+                <br>
+
+                The sun rises in the east.
+
+            </div>
+
+        </div>
+
+
+        <div class="grammar-topic">
+
+            <h3>2. Present Continuous</h3>
+
+            <p>
+                We use it for actions happening now.
+            </p>
+
+            <div class="example">
+
+                <strong>Examples:</strong>
+
+                <br>
+
+                I am studying English.
+
+                <br>
+
+                She is reading a book.
+
+                <br>
+
+                They are playing football.
+
+            </div>
+
+        </div>
+
+
+        <div class="grammar-topic">
+
+            <h3>3. Simple Past</h3>
+
+            <p>
+                We use the simple past for completed
+                actions in the past.
+            </p>
+
+            <div class="example">
+
+                <strong>Examples:</strong>
+
+                <br>
+
+                I visited Kigali yesterday.
+
+                <br>
+
+                She studied English last night.
+
+            </div>
+
+        </div>
+
+
+        <div class="grammar-topic">
+
+            <h3>4. Simple Future</h3>
+
+            <p>
+                We use will to talk about future actions.
+            </p>
+
+            <div class="example">
+
+                <strong>Examples:</strong>
+
+                <br>
+
+                I will study tomorrow.
+
+                <br>
+
+                They will visit us next week.
+
+            </div>
+
+        </div>
+
+
+        <div class="grammar-topic">
+
+            <h3>5. Nouns</h3>
+
+            <p>
+                A noun is the name of a person, place,
+                animal, thing or idea.
+            </p>
+
+            <div class="example">
+
+                <strong>Examples:</strong>
+
+                teacher, school, book, Rwanda, happiness
+
+            </div>
+
+        </div>
+
+
+        <div class="grammar-topic">
+
+            <h3>6. Pronouns</h3>
+
+            <p>
+                Pronouns replace nouns.
+            </p>
+
+            <div class="example">
+
+                I, you, he, she, it, we, they
+
+            </div>
+
+        </div>
+
+
+        <div class="grammar-topic">
+
+            <h3>7. Adjectives</h3>
+
+            <p>
+                Adjectives describe nouns.
+            </p>
+
+            <div class="example">
+
+                <strong>Examples:</strong>
+
+                <br>
+
+                a beautiful girl
+
+                <br>
+
+                a big house
+
+                <br>
+
+                an intelligent student
+
+            </div>
+
+        </div>
+
+
+        <div class="grammar-topic">
+
+            <h3>8. Adverbs</h3>
+
+            <p>
+                Adverbs describe verbs, adjectives or
+                other adverbs.
+            </p>
+
+            <div class="example">
+
+                <strong>Examples:</strong>
+
+                <br>
+
+                He runs quickly.
+
+                <br>
+
+                She speaks slowly.
+
+            </div>
+
+        </div>
+
+
+        <div class="grammar-topic">
+
+            <h3>9. Prepositions</h3>
+
+            <p>
+                Prepositions show relationships between
+                words.
+            </p>
+
+            <div class="example">
+
+                in, on, at, under, beside, between
+
+            </div>
+
+        </div>
+
+
+        <div class="grammar-topic">
+
+            <h3>10. Conjunctions</h3>
+
+            <p>
+                Conjunctions connect words or sentences.
+            </p>
+
+            <div class="example">
+
+                and, but, because, or, although
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     VOCABULARY
+========================= -->
+
+<section id="vocabulary">
+
+    <div class="section-title">
+
+        <h2>📚 English Vocabulary</h2>
+
+        <p>
+            Search and learn useful English words.
+        </p>
+
+    </div>
+
+
+    <input
+        type="text"
+        id="wordSearch"
+        class="search-box"
+        placeholder="Search for a word..."
+        onkeyup="searchWords()"
+    >
+
+
+    <div class="vocabulary-grid" id="vocabularyList">
+
+        <div class="word-card">
+
+            <h3>Achieve</h3>
+
+            <p><strong>Meaning:</strong>
+                To successfully complete something.
+            </p>
+
+            <p>
+                Example: I want to achieve my goals.
+            </p>
+
+            <button onclick="speak('Achieve')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="word-card">
+
+            <h3>Brave</h3>
+
+            <p><strong>Meaning:</strong>
+                Not afraid of difficult situations.
+            </p>
+
+            <p>
+                Example: The brave student answered.
+            </p>
+
+            <button onclick="speak('Brave')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="word-card">
+
+            <h3>Improve</h3>
+
+            <p><strong>Meaning:</strong>
+                To become better.
+            </p>
+
+            <p>
+                Example: I want to improve my English.
+            </p>
+
+            <button onclick="speak('Improve')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="word-card">
+
+            <h3>Knowledge</h3>
+
+            <p><strong>Meaning:</strong>
+                Information and understanding.
+            </p>
+
+            <p>
+                Example: Education gives us knowledge.
+            </p>
+
+            <button onclick="speak('Knowledge')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="word-card">
+
+            <h3>Opportunity</h3>
+
+            <p><strong>Meaning:</strong>
+                A good chance to do something.
+            </p>
+
+            <p>
+                Example: Education gives opportunities.
+            </p>
+
+            <button onclick="speak('Opportunity')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="word-card">
+
+            <h3>Successful</h3>
+
+            <p><strong>Meaning:</strong>
+                Having achieved a desired result.
+            </p>
+
+            <p>
+                Example: She is a successful student.
+            </p>
+
+            <button onclick="speak('Successful')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="word-card">
+
+            <h3>Challenge</h3>
+
+            <p><strong>Meaning:</strong>
+                Something difficult that tests ability.
+            </p>
+
+            <p>
+                Example: Learning English is a challenge.
+            </p>
+
+            <button onclick="speak('Challenge')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+
+        <div class="word-card">
+
+            <h3>Confident</h3>
+
+            <p><strong>Meaning:</strong>
+                Feeling sure about your abilities.
+            </p>
+
+            <p>
+                Example: She is confident when speaking.
+            </p>
+
+            <button onclick="speak('Confident')">
+                🔊 Listen
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SPEAKING
+========================= -->
+
+<section id="speaking">
+
+    <div class="section-title">
+
+        <h2>🎤 Speaking Practice</h2>
+
+        <p>
+            Listen and repeat these English sentences.
+        </p>
+
+    </div>
+
+
+    <div class="content-box">
+
+        <div class="speaking-list">
+
+
+            <div class="speaking-item">
+
+                <span>
+                    Hello, how are you today?
+                </span>
+
+                <button
+                    class="speak-button"
+                    onclick="speak('Hello, how are you today?')">
+
+                    🔊 Listen
+
+                </button>
+
+            </div>
+
+
+            <div class="speaking-item">
+
+                <span>
+                    My name is David.
+                </span>
+
+                <button
+                    class="speak-button"
+                    onclick="speak('My name is David.')">
+
+                    🔊 Listen
+
+                </button>
+
+            </div>
+
+
+            <div class="speaking-item">
+
+                <span>
+                    I am learning English.
+                </span>
+
+                <button
+                    class="speak-button"
+                    onclick="speak('I am learning English.')">
+
+                    🔊 Listen
+
+                </button>
+
+            </div>
+
+
+            <div class="speaking-item">
+
+                <span>
+                    I want to improve my English.
+                </span>
+
+                <button
+                    class="speak-button"
+                    onclick="speak('I want to improve my English.')">
+
+                    🔊 Listen
+
+                </button>
+
+            </div>
+
+
+            <div class="speaking-item">
+
+                <span>
+                    Practice makes progress.
+                </span>
+
+                <button
+                    class="speak-button"
+                    onclick="speak('Practice makes progress.')">
+
+                    🔊 Listen
+
+                </button>
+
+            </div>
+
+
+            <div class="speaking-item">
+
+                <span>
+                    I can speak English confidently.
+                </span>
+
+                <button
+                    class="speak-button"
+                    onclick="speak('I can speak English confidently.')">
+
+                    🔊 Listen
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     100 PROVERBS
+========================= -->
+
+<section id="proverbs">
+
+    <div class="section-title">
+
+        <h2>💡 100 English Proverbs</h2>
+
+        <p>
+            Learn a proverb, understand its meaning,
+            and see an example.
+        </p>
+
+    </div>
+
+
+    <div class="content-box">
+
+        <div class="proverb-box">
+
+            <div class="proverb-number" id="proverbNumber">
+                Proverb 1 of 100
+            </div>
+
+            <h3 id="proverbText">
+                A journey of a thousand miles begins
+                with a single step.
+            </h3>
+
+            <p id="proverbMeaning">
+                Meaning: Great achievements begin with
+                a small first step.
+            </p>
+
+            <p id="proverbExample">
+                Example: Start learning English today.
+            </p>
+
+
+            <div class="proverb-buttons">
+
+                <button onclick="previousProverb()">
+                    ← Previous
+                </button>
+
+                <button onclick="speakProverb()">
+                    🔊 Listen
+                </button>
+
+                <button onclick="nextProverb()">
+                    Next →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     QUIZ
+========================= -->
+
+<section id="quiz">
+
+    <div class="section-title">
+
+        <h2>📝 English Quiz</h2>
+
+        <p>
+            Test your Grammar, Vocabulary and Proverbs.
+        </p>
+
+    </div>
+
+
+    <div class="content-box">
+
+        <div id="quizContainer">
+
+            <!-- Questions created by JavaScript -->
+
+        </div>
+
+        <div id="quizResult"></div>
+
+        <button
+            class="quiz-button"
+            onclick="checkQuiz()">
+
+            Submit Quiz
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h2>English Learning Hub</h2>
+
+    <p>
+        Learn Grammar • Vocabulary • Speaking • Proverbs
+    </p>
+
+    <p>
+        © 2026 English Learning Hub
+
+    </p>
+<p>
+        IMANISHIMWE David
+
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   NAVIGATION
+========================= */
+
+function goTo(section) {
+
+    document.getElementById(section)
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
+
+
+function startLearning() {
+
+    goTo("grammar");
+
+}
+
+
+/* =========================
+   TEXT TO SPEECH
+========================= */
+
+function speak(text) {
+
+    if ("speechSynthesis" in window) {
+
+        const speech =
+            new SpeechSynthesisUtterance(text);
+
+        speech.lang = "en-US";
+
+        speech.rate = 0.85;
+
+        speech.pitch = 1;
+
+        window.speechSynthesis.cancel();
+
+        window.speechSynthesis.speak(speech);
+
+    }
+
+}
+
+
+/* =========================
+   VOCABULARY SEARCH
+========================= */
+
+function searchWords() {
+
+    const search =
+        document.getElementById("wordSearch")
+        .value
+        .toLowerCase();
+
+    const cards =
+        document.querySelectorAll(".word-card");
+
+    cards.forEach(function(card) {
+
+        const text =
+            card.innerText.toLowerCase();
+
+        if (text.includes(search)) {
+
+            card.style.display = "block";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* =========================
+   100 PROVERBS
+========================= */
+
+const proverbs = [
+
+{
+proverb: "A journey of a thousand miles begins with a single step.",
+meaning: "Great achievements begin with a small first step.",
+example: "Start learning English today, even if you learn only one word."
+},
+
+{
+proverb: "Actions speak louder than words.",
+meaning: "What someone does is more important than what they say.",
+example: "He promised to help, but his actions showed his kindness."
+},
+
+{
+proverb: "Practice makes perfect.",
+meaning: "Regular practice helps you improve a skill.",
+example: "Practice English every day to become better."
+},
+
+{
+proverb: "Where there is a will, there is a way.",
+meaning: "Determination helps people find solutions.",
+example: "Keep studying even when English is difficult."
+},
+
+{
+proverb: "Better late than never.",
+meaning: "Doing something late is better than not doing it.",
+example: "He started learning English at thirty."
+},
+
+{
+proverb: "Knowledge is power.",
+meaning: "Knowledge gives people ability and confidence.",
+example: "Education gives students useful knowledge."
+},
+
+{
+proverb: "Don't judge a book by its cover.",
+meaning: "Do not judge something only by its appearance.",
+example: "The quiet student may be very intelligent."
+},
+
+{
+proverb: "Every cloud has a silver lining.",
+meaning: "Something positive can come from a difficult situation.",
+example: "Failure can teach you an important lesson."
+},
+
+{
+proverb: "Time is money.",
+meaning: "Time is valuable and should not be wasted.",
+example: "Use your study time wisely."
+},
+
+{
+proverb: "Honesty is the best policy.",
+meaning: "Being truthful is usually the best choice.",
+example: "Always tell the truth to your teacher."
+},
+
+{
+proverb: "A friend in need is a friend indeed.",
+meaning: "A true friend helps you when you have problems.",
+example: "She helped me when I needed support."
+},
+
+{
+proverb: "The early bird catches the worm.",
+meaning: "People who act early often have an advantage.",
+example: "Start studying early before the examination."
+},
+
+{
+proverb: "Rome was not built in a day.",
+meaning: "Important achievements take time.",
+example: "Do not expect to master English in one day."
+},
+
+{
+proverb: "Two heads are better than one.",
+meaning: "Working together can produce better ideas.",
+example: "We solved the problem together."
+},
+
+{
+proverb: "No pain, no gain.",
+meaning: "Success usually requires effort.",
+example: "You must practice if you want to improve."
+},
+
+{
+proverb: "Look before you leap.",
+meaning: "Think carefully before making a decision.",
+example: "Consider all the facts before choosing."
+},
+
+{
+proverb: "The pen is mightier than the sword.",
+meaning: "Ideas and writing can be very powerful.",
+example: "Education can change society."
+},
+
+{
+proverb: "You reap what you sow.",
+meaning: "Your actions have consequences.",
+example: "If you study hard, you may get good results."
+},
+
+{
+proverb: "A picture is worth a thousand words.",
+meaning: "A picture can communicate a lot of information.",
+example: "The diagram explained the idea clearly."
+},
+
+{
+proverb: "Necessity is the mother of invention.",
+meaning: "Problems can inspire people to create solutions.",
+example: "The problem encouraged him to develop an app."
+},
+
+{
+proverb: "All that glitters is not gold.",
+meaning: "Something attractive may not be valuable.",
+example: "Do not trust everything that looks impressive."
+},
+
+{
+proverb: "Beggars can't be choosers.",
+meaning: "People with few options cannot demand everything.",
+example: "When choices are limited, accept what is available."
+},
+
+{
+proverb: "Birds of a feather flock together.",
+meaning: "People with similar interests often stay together.",
+example: "The students who love programming study together."
+},
+
+{
+proverb: "Blood is thicker than water.",
+meaning: "Family relationships can be very strong.",
+example: "His family supported him during difficult times."
+},
+
+{
+proverb: "Charity begins at home.",
+meaning: "We should help people close to us first.",
+example: "Help your family before helping others."
+},
+
+{
+proverb: "Cleanliness is next to godliness.",
+meaning: "Being clean is an important virtue.",
+example: "Keep your classroom clean."
+},
+
+{
+proverb: "Don't put all your eggs in one basket.",
+meaning: "Do not risk everything on one plan.",
+example: "Learn several skills instead of depending on one."
+},
+
+{
+proverb: "Easy come, easy go.",
+meaning: "Things gained easily can be lost easily.",
+example: "He spent the money he received quickly."
+},
+
+{
+proverb: "Fortune favors the bold.",
+meaning: "Courageous people often have more opportunities.",
+example: "She applied for the scholarship despite being nervous."
+},
+
+{
+proverb: "Good things come to those who wait.",
+meaning: "Patience can lead to good results.",
+example: "Be patient while learning a difficult topic."
+},
+
+{
+proverb: "Great minds think alike.",
+meaning: "People can independently have similar ideas.",
+example: "We both suggested the same solution."
+},
+
+{
+proverb: "Haste makes waste.",
+meaning: "Doing something too quickly can cause mistakes.",
+example: "Read your work carefully before submitting it."
+},
+
+{
+proverb: "If it ain't broke, don't fix it.",
+meaning: "Do not change something that works well.",
+example: "The current system works, so leave it alone."
+},
+
+{
+proverb: "It takes two to tango.",
+meaning: "Some situations require two people.",
+example: "Both students were responsible for the disagreement."
+},
+
+{
+proverb: "Keep your friends close and your enemies closer.",
+meaning: "Be aware of people who may oppose you.",
+example: "Understand different opinions in a competition."
+},
+
+{
+proverb: "Laughter is the best medicine.",
+meaning: "Happiness can help people feel better.",
+example: "A funny conversation made everyone feel relaxed."
+},
+
+{
+proverb: "Learn from your mistakes.",
+meaning: "Mistakes can teach valuable lessons.",
+example: "Use your past errors to improve."
+},
+
+{
+proverb: "Let sleeping dogs lie.",
+meaning: "Do not restart an old problem unnecessarily.",
+example: "The disagreement is finished, so leave it alone."
+},
+
+{
+proverb: "Like father, like son.",
+meaning: "Children may have qualities similar to their parents.",
+example: "His son also enjoys mathematics."
+},
+
+{
+proverb: "Make hay while the sun shines.",
+meaning: "Use opportunities while they are available.",
+example: "Study while you have enough time."
+},
+
+{
+proverb: "Many hands make light work.",
+meaning: "Work becomes easier when people cooperate.",
+example: "The students cleaned the classroom together."
+},
+
+{
+proverb: "Never put off until tomorrow what you can do today.",
+meaning: "Do not unnecessarily delay important tasks.",
+example: "Complete your assignment today."
+},
+
+{
+proverb: "No news is good news.",
+meaning: "A lack of bad news can be a positive sign.",
+example: "Nobody called about the problem, so everything may be fine."
+},
+
+{
+proverb: "Nothing ventured, nothing gained.",
+meaning: "You may need to take reasonable risks to succeed.",
+example: "Applying for the scholarship could create an opportunity."
+},
+
+{
+proverb: "One good turn deserves another.",
+meaning: "Kindness should be returned with kindness.",
+example: "She helped me, so I helped her."
+},
+
+{
+proverb: "Out of sight, out of mind.",
+meaning: "We often forget things that we do not see.",
+example: "I forgot about the old book after leaving it away."
+},
+
+{
+proverb: "Prevention is better than cure.",
+meaning: "Avoiding a problem is better than solving it later.",
+example: "Study regularly instead of waiting until the last day."
+},
+
+{
+proverb: "Slow and steady wins the race.",
+meaning: "Consistent effort can lead to success.",
+example: "Study a little every day."
+},
+
+{
+proverb: "Strike while the iron is hot.",
+meaning: "Act when the opportunity is available.",
+example: "Submit your application before the deadline."
+},
+
+{
+proverb: "The grass is always greener on the other side.",
+meaning: "Other situations may seem better than our own.",
+example: "Do not assume another school is automatically better."
+},
+
+{
+proverb: "The more you learn, the more you know.",
+meaning: "Learning increases your knowledge.",
+example: "Reading regularly helps you understand more."
+},
+
+{
+proverb: "Too many cooks spoil the broth.",
+meaning: "Too many people controlling one task can cause problems.",
+example: "Too many people editing one project can create confusion."
+},
+
+{
+proverb: "United we stand, divided we fall.",
+meaning: "Cooperation makes people stronger.",
+example: "The team succeeded because everyone worked together."
+},
+
+{
+proverb: "Waste not, want not.",
+meaning: "Avoiding waste helps you have enough resources.",
+example: "Use your study materials carefully."
+},
+
+{
+proverb: "When in Rome, do as the Romans do.",
+meaning: "Adapt to the customs of the place you are visiting.",
+example: "Respect the rules of another culture."
+},
+
+{
+proverb: "You cannot have your cake and eat it too.",
+meaning: "You cannot enjoy two incompatible benefits at the same time.",
+example: "You cannot spend all your money and still save it."
+},
+
+{
+proverb: "A watched pot never boils.",
+meaning: "Waiting impatiently can make time seem slower.",
+example: "Do something useful while waiting."
+},
+
+{
+proverb: "Absence makes the heart grow fonder.",
+meaning: "Being away from someone can increase affection.",
+example: "He appreciated his family more after traveling."
+},
+
+{
+proverb: "An apple a day keeps the doctor away.",
+meaning: "Healthy habits can help maintain good health.",
+example: "Eating nutritious food is part of a healthy lifestyle."
+},
+
+{
+proverb: "As you make your bed, so you must lie in it.",
+meaning: "You must accept the consequences of your choices.",
+example: "If you ignore your work, you may face the consequences."
+},
+
+{
+proverb: "Beauty is in the eye of the beholder.",
+meaning: "People have different ideas about what is beautiful.",
+example: "Different people may like different designs."
+},
+
+{
+proverb: "Better safe than sorry.",
+meaning: "It is better to avoid danger or problems.",
+example: "Check your work before submitting it."
+},
+
+{
+proverb: "Don't count your chickens before they hatch.",
+meaning: "Do not assume success before it happens.",
+example: "Wait for the results before celebrating."
+},
+
+{
+proverb: "Don't bite the hand that feeds you.",
+meaning: "Do not harm someone who helps you.",
+example: "Respect people who support your education."
+},
+
+{
+proverb: "Don't cry over spilled milk.",
+meaning: "Do not waste time regretting something that cannot be changed.",
+example: "Learn from the mistake and move forward."
+},
+
+{
+proverb: "Every dog has its day.",
+meaning: "Everyone gets a chance to succeed.",
+example: "Keep trying because your opportunity may come."
+},
+
+{
+proverb: "Experience is the best teacher.",
+meaning: "Practical experience teaches valuable lessons.",
+example: "Working on projects helps students learn."
+},
+
+{
+proverb: "First impressions are lasting impressions.",
+meaning: "People often remember their first experience of someone.",
+example: "Be polite when meeting someone for the first time."
+},
+
+{
+proverb: "Give credit where credit is due.",
+meaning: "Recognize people for their achievements.",
+example: "Thank the student who solved the problem."
+},
+
+{
+proverb: "Hope for the best, prepare for the worst.",
+meaning: "Stay positive but prepare for difficulties.",
+example: "Study well even if you expect an easy examination."
+},
+
+{
+proverb: "If you can't beat them, join them.",
+meaning: "Sometimes cooperation is better than competition.",
+example: "Join the team instead of competing against everyone."
+},
+
+{
+proverb: "It's never too late to learn.",
+meaning: "Learning can happen at any age.",
+example: "You can start learning English whenever you want."
+},
+
+{
+proverb: "Knowledge speaks, but wisdom listens.",
+meaning: "Wisdom includes understanding when to listen.",
+example: "A good student listens carefully to advice."
+},
+
+{
+proverb: "Little drops make the mighty ocean.",
+meaning: "Small efforts can create big results.",
+example: "One new word each day builds vocabulary."
+},
+
+{
+proverb: "Money doesn't grow on trees.",
+meaning: "Money is limited and should be used carefully.",
+example: "Do not waste your money."
+},
+
+{
+proverb: "Old habits die hard.",
+meaning: "Long-established habits are difficult to change.",
+example: "Changing a study habit may take time."
+},
+
+{
+proverb: "Opportunity knocks but once.",
+meaning: "Some opportunities may not come again.",
+example: "Take important opportunities seriously."
+},
+
+{
+proverb: "Patience is a virtue.",
+meaning: "Being patient is a valuable quality.",
+example: "Be patient when learning difficult grammar."
+},
+
+{
+proverb: "People who live in glass houses shouldn't throw stones.",
+meaning: "Do not criticize others for faults you also have.",
+example: "Before criticizing someone, consider your own mistakes."
+},
+
+{
+proverb: "Seeing is believing.",
+meaning: "People often believe something more easily when they see it.",
+example: "Seeing the result helped me understand the experiment."
+},
+
+{
+proverb: "The best things in life are free.",
+meaning: "Some valuable experiences do not cost money.",
+example: "Friendship and kindness can be priceless."
+},
+
+{
+proverb: "The devil is in the details.",
+meaning: "Small details can cause unexpected problems.",
+example: "Check every detail before submitting your project."
+},
+
+{
+proverb: "The truth will come out.",
+meaning: "Hidden facts are eventually discovered.",
+example: "Be honest because the truth may be discovered."
+},
+
+{
+proverb: "There is no place like home.",
+meaning: "Home can provide a special feeling of comfort.",
+example: "After traveling, she was happy to return home."
+},
+
+{
+proverb: "There's no smoke without fire.",
+meaning: "Rumors may sometimes have a reason behind them.",
+example: "The repeated reports made people investigate the issue."
+},
+
+{
+proverb: "Time heals all wounds.",
+meaning: "Emotional difficulties often become easier with time.",
+example: "Give yourself time to recover from disappointment."
+},
+
+{
+proverb: "Too little, too late.",
+meaning: "An action may be ineffective because it comes too late.",
+example: "Studying one hour before an examination may be too little."
+},
+
+{
+proverb: "Two wrongs don't make a right.",
+meaning: "Doing something wrong in response to another wrong does not make it right.",
+example: "Do not insult someone just because they insulted you."
+},
+
+{
+proverb: "What goes around comes around.",
+meaning: "Actions often have consequences that return to us.",
+example: "Treat people kindly because kindness can return."
+},
+
+{
+proverb: "When one door closes, another opens.",
+meaning: "A new opportunity may appear after a disappointment.",
+example: "If one opportunity disappears, look for another."
+},
+
+{
+proverb: "Where there's smoke, there's fire.",
+meaning: "A sign or rumor may indicate a real problem.",
+example: "Several complaints suggested that something was wrong."
+},
+
+{
+proverb: "You can't please everyone.",
+meaning: "It is impossible to satisfy every person.",
+example: "Different students may prefer different teaching methods."
+},
+
+{
+proverb: "A chain is only as strong as its weakest link.",
+meaning: "A group depends partly on its weakest member or part.",
+example: "Every team member must contribute."
+},
+
+{
+proverb: "A good beginning makes a good ending.",
+meaning: "Starting well can help produce a successful result.",
+example: "Plan your project carefully from the beginning."
+},
+
+{
+proverb: "A little knowledge is a dangerous thing.",
+meaning: "Limited knowledge can sometimes lead to poor decisions.",
+example: "Understand a subject properly before giving advice."
+},
+
+{
+proverb: "A rolling stone gathers no moss.",
+meaning: "Someone who keeps moving or changing may avoid becoming settled.",
+example: "He enjoys moving to new places and learning new things."
+},
+
+{
+proverb: "All roads lead to Rome.",
+meaning: "Different methods can lead to the same result.",
+example: "There are many ways to learn English."
+},
+
+{
+proverb: "An ounce of prevention is worth a pound of cure.",
+meaning: "Preventing a problem is better than solving it later.",
+example: "Regular preparation can prevent examination problems."
+},
+
+{
+proverb: "Cut your coat according to your cloth.",
+meaning: "Live according to the resources you have.",
+example: "Choose a project that fits your available budget."
+},
+
+{
+proverb: "Don't make a mountain out of a molehill.",
+meaning: "Do not make a small problem seem very serious.",
+example: "A small mistake does not mean the whole project failed."
+},
+
+{
+proverb: "Empty vessels make the most noise.",
+meaning: "People with little knowledge may talk the most.",
+example: "Listen to people who have real understanding."
+},
+
+{
+proverb: "Good things come in small packages.",
+meaning: "Something small can be very valuable.",
+example: "A short book can contain excellent ideas."
+},
+
+{
+proverb: "It's better to give than to receive.",
+meaning: "Giving can be more rewarding than receiving.",
+example: "Helping another student can be very rewarding."
+},
+
+{
+proverb: "One step at a time.",
+meaning: "Progress can be made by dealing with things gradually.",
+example: "Learn English one topic at a time."
+},
+
+{
+proverb: "The squeaky wheel gets the grease.",
+meaning: "Problems that receive attention are more likely to be solved.",
+example: "Report a problem clearly so it can be addressed."
+},
+
+{
+proverb: "United we stand, divided we fall.",
+meaning: "People are stronger when they cooperate.",
+example: "The team succeeded because they worked together."
+},
+
+{
+proverb: "You learn something new every day.",
+meaning: "Every day provides opportunities for learning.",
+example: "Reading can teach you something new each day."
+},
+
+{
+proverb: "A problem shared is a problem halved.",
+meaning: "Talking about a problem can make it easier to handle.",
+example: "Discuss a difficult assignment with your teacher."
+},
+
+{
+proverb: "Don't cross the bridge until you come to it.",
+meaning: "Do not worry about a problem before it happens.",
+example: "Focus on today's work instead of worrying about tomorrow."
+},
+
+{
+proverb: "The apple doesn't fall far from the tree.",
+meaning: "Children often resemble their parents.",
+example: "Like her mother, she loves teaching."
+},
+
+{
+proverb: "A miss is as good as a mile.",
+meaning: "A failure is still a failure even if it was close.",
+example: "Being one mark short still means you missed the target."
+},
+
+{
+proverb: "Clothes do not make the man.",
+meaning: "Appearance does not determine a person's true qualities.",
+example: "Judge people by their character, not their clothes."
+},
+
+{
+proverb: "Every minute counts.",
+meaning: "Even small amounts of time are valuable.",
+example: "Use every minute of your study time."
+},
+
+{
+proverb: "Success comes to those who work for it.",
+meaning: "Hard work is important for achieving success.",
+example: "Regular study can help you succeed."
+}
+
+];
+
+let proverbIndex = 0;
+
+
+function showProverb() {
+
+    const proverb =
+        proverbs[proverbIndex];
+
+    document.getElementById("proverbNumber")
+        .innerText =
+        "Proverb " +
+        (proverbIndex + 1) +
+        " of " +
+        proverbs.length;
+
+    document.getElementById("proverbText")
+        .innerText =
+        proverb.proverb;
+
+    document.getElementById("proverbMeaning")
+        .innerText =
+        "Meaning: " +
+        proverb.meaning;
+
+    document.getElementById("proverbExample")
+        .innerText =
+        "Example: " +
+        proverb.example;
+
+}
+
+
+function nextProverb() {
+
+    proverbIndex++;
+
+    if (proverbIndex >= proverbs.length) {
+
+        proverbIndex = 0;
+
+    }
+
+    showProverb();
+
+}
+
+
+function previousProverb() {
+
+    proverbIndex--;
+
+    if (proverbIndex < 0) {
+
+        proverbIndex =
+            proverbs.length - 1;
+
+    }
+
+    showProverb();
+
+}
+
+
+function speakProverb() {
+
+    speak(
+        proverbs[proverbIndex].proverb
+    );
+
+}
+
+
+/* =========================
+   QUIZ
+========================= */
+
+const quizQuestions = [
+
+{
+question: "Which sentence is correct?",
+options: [
+"I goes to school.",
+"I go to school.",
+"I going to school.",
+"I gone to school."
+],
+answer: 1
+},
+
+{
+question: "What is the past tense of 'go'?",
+options: [
+"Goed",
+"Going",
+"Went",
+"Gone"
+],
+answer: 2
+},
+
+{
+question: "Which word is an adjective?",
+options: [
+"Quickly",
+"Beautiful",
+"Run",
+"School"
+],
+answer: 1
+},
+
+{
+question: "What does 'Practice makes perfect' mean?",
+options: [
+"Practice is unnecessary.",
+"Practice helps improve a skill.",
+"Perfect people never practice.",
+"Practice makes things difficult."
+],
+answer: 1
+},
+
+{
+question: "Choose the correct sentence.",
+options: [
+"She are reading.",
+"She is reading.",
+"She reading.",
+"She be reading."
+],
+answer: 1
+},
+
+{
+question: "Which word is a noun?",
+options: [
+"Beautiful",
+"Quickly",
+"Teacher",
+"Run"
+],
+answer: 2
+},
+
+{
+question: "What does 'Knowledge is power' suggest?",
+options: [
+"Knowledge is useless.",
+"Knowledge can give people ability.",
+"Power prevents learning.",
+"Learning is unnecessary."
+],
+answer: 1
+},
+
+{
+question: "Choose the correct future sentence.",
+options: [
+"I will study tomorrow.",
+"I studied tomorrow.",
+"I studying tomorrow.",
+"I study yesterday."
+],
+answer: 0
+},
+
+{
+question: "Which word is a pronoun?",
+options: [
+"School",
+"They",
+"Beautiful",
+"Quickly"
+],
+answer: 1
+},
+
+{
+question: "What does 'Better late than never' mean?",
+options: [
+"Never do anything.",
+"Doing something late is better than not doing it.",
+"Always arrive late.",
+"Late work is always perfect."
+],
+answer: 1
+}
+
+];
+
+
+function createQuiz() {
+
+    const container =
+        document.getElementById(
+            "quizContainer"
+        );
+
+    quizQuestions.forEach(
+        function(q, index) {
+
+            const div =
+                document.createElement("div");
+
+            div.className =
+                "quiz-question";
+
+            let html =
+                "<h3>" +
+                (index + 1) +
+                ". " +
+                q.question +
+                "</h3>";
+
+            q.options.forEach(
+                function(option, optionIndex) {
+
+                    html += `
+                    <label class="option">
+
+                        <input
+                            type="radio"
+                            name="question${index}"
+                            value="${optionIndex}"
+                        >
+
+                        ${option}
+
+                    </label>
+                    `;
+
+                }
+            );
+
+            div.innerHTML = html;
+
+            container.appendChild(div);
+
+        }
+    );
+
+}
+
+
+function checkQuiz() {
+
+    let score = 0;
+
+    quizQuestions.forEach(
+        function(q, index) {
+
+            const selected =
+                document.querySelector(
+                    `input[name="question${index}"]:checked`
+                );
+
+            if (
+                selected &&
+                Number(selected.value) === q.answer
+            ) {
+
+                score++;
+
+            }
+
+        }
+    );
+
+
+    const percentage =
+        Math.round(
+            (score / quizQuestions.length) * 100
+        );
+
+
+    document.getElementById("quizResult")
+        .innerHTML =
+        "Your Score: " +
+        score +
+        " / " +
+        quizQuestions.length +
+        " (" +
+        percentage +
+        "%)";
+
+}
+
+
+/* =========================
+   CHANGING BACKGROUND
+========================= */
+
+const backgrounds = [
+
+    "linear-gradient(120deg, #2563eb, #7c3aed)",
+
+    "linear-gradient(120deg, #059669, #2563eb)",
+
+    "linear-gradient(120deg, #db2777, #7c3aed)",
+
+    "linear-gradient(120deg, #ea580c, #2563eb)",
+
+    "linear-gradient(120deg, #0891b2, #4f46e5)"
+
+];
+
+
+let backgroundIndex = 0;
+
+
+setInterval(function() {
+
+    backgroundIndex++;
+
+    if (
+        backgroundIndex >=
+        backgrounds.length
+    ) {
+
+        backgroundIndex = 0;
+
+    }
+
+    document.querySelector(".hero")
+        .style.background =
+        backgrounds[backgroundIndex];
+
+}, 4000);
+
+
+/* =========================
+   START WEBSITE
+========================= */
+
+createQuiz();
+
+showProverb();
+
+</script>
+
+</body>
+</html>
